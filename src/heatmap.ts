@@ -68,7 +68,7 @@ export class HeatMap {
     // Get a range of colors.
     let tmpScale = d3.scale.linear<string, number>()
         .domain([0, .5, 1])
-        .range(["#f59322", "#e8eaeb", "#0877bd"])
+        .range(["#dcbc5d", "#e8eaeb", "#64473a"])
         .clamp(true);
     // Due to numerical error, we need to specify
     // d3.range(0, end + small_epsilon, step)
@@ -118,6 +118,10 @@ export class HeatMap {
       let xAxis = d3.svg.axis()
         .scale(this.xScale)
         .orient("bottom");
+
+      console.log(this.xScale)
+      console.log(this.yScale)
+      
 
       let yAxis = d3.svg.axis()
         .scale(this.yScale)

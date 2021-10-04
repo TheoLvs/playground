@@ -49,7 +49,7 @@ function scrollTween(offset) {
 
 const RECT_SIZE = 30;
 const BIAS_SIZE = 5;
-const NUM_SAMPLES_CLASSIFY = 500;
+const NUM_SAMPLES_CLASSIFY = 1000;
 const NUM_SAMPLES_REGRESS = 1200;
 const DENSITY = 100;
 
@@ -163,7 +163,7 @@ let linkWidthScale = d3.scale.linear()
   .clamp(true);
 let colorScale = d3.scale.linear<string, number>()
                      .domain([-1, 0, 1])
-                     .range(["#f59322", "#e8eaeb", "#0877bd"])
+                     .range(["#dcbc5d", "#e8eaeb", "#64473a"])
                      .clamp(true);
 let iter = 0;
 let trainData: Example2D[] = [];
@@ -698,7 +698,7 @@ function addPlusMinusControl(x: number, layerIdx: number) {
 
   let suffix = state.networkShape[i] > 1 ? "s" : "";
   div.append("div").text(
-    state.networkShape[i] + " neuron" + suffix
+    state.networkShape[i] + " split" + suffix
   );
 }
 
